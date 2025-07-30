@@ -1,0 +1,331 @@
+/**
+ * Quickforge Blog Custom Styles
+ * Matching the main site branding and design system
+ */
+
+/* Font Face Definitions */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/aeonik/Aeonik-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/aeonik/Aeonik-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/aeonik/Aeonik-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Fono';
+  src: url('/fonts/aeonik-fono/AeonikFono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Fono';
+  src: url('/fonts/aeonik-fono/AeonikFono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Fono';
+  src: url('/fonts/aeonik-fono/AeonikFono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/aeonik-mono/AeonikMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/aeonik-mono/AeonikMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/aeonik-mono/AeonikMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light Mode Variables */
+:root {
+  /* Primary Purple Colors */
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a855f7;
+  --ifm-color-primary-lighter: #d8b4fe;
+  --ifm-color-primary-lightest: #e9d5ff;
+  
+  /* Background Colors */
+  --ifm-background-color: #faf8ff;
+  --ifm-background-surface-color: #ffffff;
+  
+  /* Typography */
+  --ifm-font-family-base: 'Aeonik', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Aeonik Fono', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'Aeonik Mono', 'SF Mono', monospace;
+  --ifm-code-font-size: 95%;
+  
+  /* Code Highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Navbar */
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-navbar-height: 4rem;
+  
+  /* Footer */
+  --ifm-footer-background-color: #0e0210;
+  
+  /* Accent Yellow */
+  --quickforge-accent-yellow: #eab308;
+  --quickforge-accent-yellow-dark: #ca8a04;
+}
+
+/* Dark Mode Variables */
+[data-theme='dark'] {
+  /* Primary Purple Colors */
+  --ifm-color-primary: #a855f7;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #d8b4fe;
+  --ifm-color-primary-lighter: #e9d5ff;
+  --ifm-color-primary-lightest: #f3e8ff;
+  
+  /* Background Colors */
+  --ifm-background-color: #0e0210;
+  --ifm-background-surface-color: #1a0d1f;
+  
+  /* Code Highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Global Styles */
+html {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+}
+
+/* Blog Specific Styles */
+.blog-wrapper {
+  background-color: var(--ifm-background-color);
+}
+
+/* Blog Post Card Enhancements */
+article.margin-bottom--xl {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article.margin-bottom--xl:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+}
+
+/* Reading Time Enhancement */
+.blog-post__read-time {
+  color: var(--quickforge-accent-yellow);
+  font-weight: 500;
+}
+
+/* Blog Post Page */
+.blog-post-page {
+  background-color: var(--ifm-background-color);
+}
+
+/* Code Blocks */
+pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Navbar Enhancements */
+.navbar {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  background-color: rgba(250, 248, 255, 0.9);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(14, 2, 16, 0.9);
+}
+
+.navbar__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Footer Enhancements */
+.footer {
+  background: linear-gradient(180deg, #0e0210 0%, #1a0d1f 100%);
+  color: #ffffff;
+}
+
+.footer__copyright {
+  opacity: 0.8;
+}
+
+/* Button Styles */
+.button {
+  font-family: var(--ifm-font-family-base);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Pagination */
+.pagination-nav__link {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Blog Sidebar */
+.blog-sidebar {
+  font-family: var(--ifm-font-family-base);
+}
+
+.blog-sidebar__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+}
+
+/* Tags */
+.tag {
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  border: 1px solid var(--ifm-color-primary-lighter);
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: var(--ifm-color-primary-lighter);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .tag {
+  background-color: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+[data-theme='dark'] .tag:hover {
+  background-color: rgba(168, 85, 247, 0.2);
+}
+
+/* Blog Post Content */
+.markdown {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--quickforge-accent-yellow);
+  background-color: rgba(234, 179, 8, 0.05);
+  font-style: italic;
+}
+
+[data-theme='dark'] blockquote {
+  background-color: rgba(234, 179, 8, 0.1);
+}
+
+/* Custom Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #8b5cf6 0%, #a855f7 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 996px) {
+  .navbar__title {
+    font-size: 1.25rem;
+  }
+  
+  .markdown {
+    font-size: 1rem;
+  }
+  
+  .markdown h1 {
+    font-size: 2rem;
+  }
+  
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown h3 {
+    font-size: 1.25rem;
+  }
+}

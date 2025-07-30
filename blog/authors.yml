@@ -1,0 +1,20 @@
+quickforge:
+  name: Quickforge Team
+  title: AI Automation Experts
+  url: https://quickforge.ai
+  image_url: /img/quickforge-avatar.png
+  email: team@quickforge.ai
+
+greg:
+  name: Greg
+  title: Founder & Lead Automation Engineer
+  url: https://quickforge.ai
+  image_url: /img/authors/greg.jpg
+  email: greg@quickforge.ai
+
+alex:
+  name: Alex
+  title: Co-founder & Head of Strategy
+  url: https://quickforge.ai
+  image_url: /img/authors/alex.jpg
+  email: alex@quickforge.ai

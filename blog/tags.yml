@@ -1,0 +1,49 @@
+ai-automation:
+  label: AI Automation
+  permalink: /ai-automation
+  description: Practical AI automation solutions for business
+
+case-study:
+  label: Case Studies
+  permalink: /case-studies
+  description: Real-world AI automation implementations and results
+
+integration:
+  label: Tool Integrations
+  permalink: /integrations
+  description: Connecting AI to your existing business tools
+
+best-practices:
+  label: Best Practices
+  permalink: /best-practices
+  description: AI automation best practices and guidelines
+
+roi:
+  label: ROI & Business Impact
+  permalink: /roi
+  description: Measuring the business impact of AI automation
+
+crm:
+  label: CRM Automation
+  permalink: /crm
+  description: AI automation for CRM systems
+
+erp:
+  label: ERP Automation
+  permalink: /erp
+  description: AI automation for ERP systems
+
+workflow:
+  label: Workflow Optimization
+  permalink: /workflow
+  description: Optimizing business workflows with AI
+
+tutorial:
+  label: Tutorials
+  permalink: /tutorials
+  description: Step-by-step AI automation guides
+
+industry:
+  label: Industry Insights
+  permalink: /industry
+  description: AI automation insights by industry
