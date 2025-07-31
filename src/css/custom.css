@@ -1,6 +1,6 @@
 /**
  * Quickforge Blog Custom Styles
- * Matching the main site branding and design system
+ * Dark theme only - matching the main site branding
  */
 
 /* Font Face Definitions */
@@ -76,44 +76,8 @@
   font-display: swap;
 }
 
-/* Light Mode Variables */
+/* Dark Theme Variables (Always Active) */
 :root {
-  /* Primary Purple Colors */
-  --ifm-color-primary: #8b5cf6;
-  --ifm-color-primary-dark: #7c3aed;
-  --ifm-color-primary-darker: #6d28d9;
-  --ifm-color-primary-darkest: #5b21b6;
-  --ifm-color-primary-light: #a855f7;
-  --ifm-color-primary-lighter: #d8b4fe;
-  --ifm-color-primary-lightest: #e9d5ff;
-  
-  /* Background Colors */
-  --ifm-background-color: #faf8ff;
-  --ifm-background-surface-color: #ffffff;
-  
-  /* Typography */
-  --ifm-font-family-base: 'Aeonik', system-ui, sans-serif;
-  --ifm-heading-font-family: 'Aeonik Fono', system-ui, sans-serif;
-  --ifm-font-family-monospace: 'Aeonik Mono', 'SF Mono', monospace;
-  --ifm-code-font-size: 95%;
-  
-  /* Code Highlighting */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  
-  /* Navbar */
-  --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-navbar-height: 4rem;
-  
-  /* Footer */
-  --ifm-footer-background-color: #0e0210;
-  
-  /* Accent Yellow */
-  --quickforge-accent-yellow: #eab308;
-  --quickforge-accent-yellow-dark: #ca8a04;
-}
-
-/* Dark Mode Variables */
-[data-theme='dark'] {
   /* Primary Purple Colors */
   --ifm-color-primary: #a855f7;
   --ifm-color-primary-dark: #8b5cf6;
@@ -127,36 +91,90 @@
   --ifm-background-color: #0e0210;
   --ifm-background-surface-color: #1a0d1f;
   
+  /* Typography */
+  --ifm-font-family-base: 'Aeonik', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Aeonik Fono', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'Aeonik Mono', 'SF Mono', monospace;
+  --ifm-code-font-size: 95%;
+  
   /* Code Highlighting */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Navbar */
+  --ifm-navbar-background-color: rgba(14, 2, 16, 0.9);
+  --ifm-navbar-height: 4rem;
+  
+  /* Footer */
+  --ifm-footer-background-color: #0e0210;
+  
+  /* Accent Yellow */
+  --quickforge-accent-yellow: #eab308;
+  --quickforge-accent-yellow-dark: #ca8a04;
+  
+  /* Text Colors */
+  --ifm-color-content: #ffffff;
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.8);
+  
+  /* Links */
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary-light);
+  
+  /* Borders */
+  --ifm-color-emphasis-300: rgba(255, 255, 255, 0.12);
+  --ifm-color-emphasis-600: rgba(255, 255, 255, 0.25);
+  
+  /* Cards and Surfaces */
+  --ifm-card-background-color: var(--ifm-background-surface-color);
+  --ifm-dropdown-background-color: var(--ifm-background-surface-color);
+  
+  /* Force dark mode colors */
+  --ifm-color-scheme: dark;
+}
+
+/* Ensure dark theme is always applied */
+html[data-theme='light'] {
+  --ifm-background-color: #0e0210 !important;
+  --ifm-background-surface-color: #1a0d1f !important;
 }
 
 /* Global Styles */
 html {
   font-family: var(--ifm-font-family-base);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+}
+
+body {
+  background-color: var(--ifm-background-color);
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--ifm-heading-font-family);
   font-weight: 700;
+  color: var(--ifm-color-content);
 }
 
 /* Blog Specific Styles */
 .blog-wrapper {
   background-color: var(--ifm-background-color);
+  min-height: 100vh;
 }
 
 /* Blog Post Card Enhancements */
 article.margin-bottom--xl {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid rgba(168, 85, 247, 0.1);
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  padding: 1.5rem;
 }
 
 article.margin-bottom--xl:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.4);
+  border-color: rgba(168, 85, 247, 0.3);
 }
 
 /* Reading Time Enhancement */
@@ -168,34 +186,44 @@ article.margin-bottom--xl:hover {
 /* Blog Post Page */
 .blog-post-page {
   background-color: var(--ifm-background-color);
+  color: var(--ifm-color-content);
 }
 
 /* Code Blocks */
 pre {
   font-family: var(--ifm-font-family-monospace);
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 /* Navbar Enhancements */
 .navbar {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  background-color: rgba(250, 248, 255, 0.9);
-}
-
-[data-theme='dark'] .navbar {
   background-color: rgba(14, 2, 16, 0.9);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
 }
 
 .navbar__title {
   font-family: var(--ifm-heading-font-family);
   font-weight: 700;
   font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.navbar__link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
 }
 
 /* Footer Enhancements */
 .footer {
   background: linear-gradient(180deg, #0e0210 0%, #1a0d1f 100%);
   color: #ffffff;
+  border-top: 1px solid rgba(168, 85, 247, 0.1);
 }
 
 .footer__copyright {
@@ -212,90 +240,109 @@ pre {
 .button--primary {
   background-color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
+  color: #000000;
 }
 
 .button--primary:hover {
   background-color: var(--ifm-color-primary-dark);
   border-color: var(--ifm-color-primary-dark);
   transform: translateY(-1px);
+  color: #000000;
 }
 
 /* Pagination */
 .pagination-nav__link {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid rgba(168, 85, 247, 0.1);
   border-radius: 8px;
   transition: all 0.2s ease;
+  color: var(--ifm-color-content);
 }
 
 .pagination-nav__link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  border-color: rgba(168, 85, 247, 0.3);
 }
 
 /* Blog Sidebar */
 .blog-sidebar {
   font-family: var(--ifm-font-family-base);
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(168, 85, 247, 0.1);
 }
 
 .blog-sidebar__title {
   font-family: var(--ifm-heading-font-family);
   font-weight: 600;
+  color: var(--ifm-color-content);
 }
 
 /* Tags */
 .tag {
-  background-color: var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-darkest);
-  border: 1px solid var(--ifm-color-primary-lighter);
+  background-color: rgba(168, 85, 247, 0.1);
+  color: var(--ifm-color-primary-light);
+  border: 1px solid rgba(168, 85, 247, 0.3);
   transition: all 0.2s ease;
 }
 
 .tag:hover {
-  background-color: var(--ifm-color-primary-lighter);
-  text-decoration: none;
-}
-
-[data-theme='dark'] .tag {
-  background-color: rgba(168, 85, 247, 0.1);
-  border-color: rgba(168, 85, 247, 0.3);
-}
-
-[data-theme='dark'] .tag:hover {
   background-color: rgba(168, 85, 247, 0.2);
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 /* Blog Post Content */
 .markdown {
   font-size: 1.125rem;
   line-height: 1.75;
+  color: var(--ifm-color-content);
 }
 
 .markdown h1 {
   font-size: 2.5rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+  color: #ffffff;
 }
 
 .markdown h2 {
   font-size: 2rem;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
+  color: #ffffff;
 }
 
 .markdown h3 {
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 /* Blockquotes */
 blockquote {
   border-left: 4px solid var(--quickforge-accent-yellow);
-  background-color: rgba(234, 179, 8, 0.05);
+  background-color: rgba(234, 179, 8, 0.1);
   font-style: italic;
+  color: var(--ifm-color-content-secondary);
 }
 
-[data-theme='dark'] blockquote {
-  background-color: rgba(234, 179, 8, 0.1);
+/* Tables */
+table {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+table thead tr {
+  background-color: rgba(168, 85, 247, 0.1);
+}
+
+table tbody tr:hover {
+  background-color: rgba(168, 85, 247, 0.05);
 }
 
 /* Custom Gradient Text */
@@ -305,6 +352,38 @@ blockquote {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+/* Announcement Bar */
+.announcementBar {
+  background-color: var(--quickforge-accent-yellow);
+  color: #000000;
+}
+
+/* Search */
+.DocSearch-Button {
+  background-color: var(--ifm-background-surface-color) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+}
+
+.DocSearch-Button:hover {
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.3) !important;
+}
+
+/* TOC */
+.table-of-contents {
+  border-left: 2px solid rgba(168, 85, 247, 0.2);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* Admonitions */
+.admonition {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 /* Responsive Adjustments */
@@ -327,5 +406,9 @@ blockquote {
   
   .markdown h3 {
     font-size: 1.25rem;
+  }
+  
+  article.margin-bottom--xl {
+    padding: 1rem;
   }
 }

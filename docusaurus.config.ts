@@ -66,6 +66,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/quickforge-social-card.png',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     metadata: [
       {name: 'keywords', content: 'AI automation, business automation, workflow optimization, CRM integration, ERP automation, AI consulting'},
       {name: 'description', content: 'Learn how to implement practical AI automation solutions that connect to your existing business tools. Real implementation guides and case studies.'},
@@ -92,8 +97,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Quickforge. AI Automation That Actually Works.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsDark,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ['typescript', 'python', 'bash', 'json', 'yaml'],
     },
   } satisfies Preset.ThemeConfig,
