@@ -63,6 +63,12 @@ const config: Config = {
     ],
   ],
 
+  // Custom fields for environment variables - these get injected at build time
+  customFields: {
+    posthogKey: process.env.POSTHOG_KEY || undefined,
+    posthogHost: process.env.POSTHOG_HOST || 'https://app.posthog.com',
+  },
+
   themeConfig: {
     image: 'img/quickforge-social-card.png',
     colorMode: {

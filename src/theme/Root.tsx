@@ -1,22 +1,30 @@
 import React, { useEffect } from 'react';
 import posthog from 'posthog-js';
-
-// Initialize PostHog
-if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-  posthog.init(process.env.REACT_APP_POSTHOG_KEY || 'phc_YOUR_PROJECT_API_KEY', {
-    api_host: process.env.REACT_APP_POSTHOG_HOST || 'https://app.posthog.com',
-    capture_pageview: true,
-    capture_pageleave: true,
-  });
-}
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Root({ children }: { children: React.ReactNode }) {
+  const { siteConfig } = useDocusaurusContext();
+  
   useEffect(() => {
-    // Track page views on route changes
-    if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-      posthog.capture('$pageview');
+    // Initialize PostHog only in browser environment and if key is provided
+    if (ExecutionEnvironment.canUseDOM && siteConfig.customFields?.posthogKey) {
+      const posthogKey = siteConfig.customFields.posthogKey as string;
+      const posthogHost = (siteConfig.customFields.posthogHost as string) || 'https://app.posthog.com';
+      
+      posthog.init(posthogKey, {
+        api_host: posthogHost,
+        capture_pageview: true,
+        capture_pageleave: true,
+        loaded: (posthog) => {
+          // Disable in development
+          if (window.location.hostname === 'localhost') {
+            posthog.opt_out_capturing();
+          }
+        }
+      });
     }
-  }, []);
+  }, [siteConfig]);
 
   return <>{children}</>;
 }
