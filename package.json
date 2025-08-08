@@ -1,6 +1,13 @@
 {
   "name": "quickforge-blog",
   "version": "0.0.0",
+  "description": "Official blog for Quickforge - Practical AI automation solutions for businesses",
+  "author": "ggsp",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quickforge/quickforge-blog.git"
+  },
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
