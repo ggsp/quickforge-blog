@@ -102,7 +102,9 @@
   
   /* Navbar */
   --ifm-navbar-background-color: rgba(14, 2, 16, 0.9);
-  --ifm-navbar-height: 4rem;
+  --ifm-navbar-height: 5rem;
+  --ifm-navbar-padding-vertical: 1rem;
+  --ifm-navbar-padding-horizontal: 1.5rem;
   
   /* Footer */
   --ifm-footer-background-color: #0e0210;
@@ -202,6 +204,7 @@ pre {
   backdrop-filter: blur(10px);
   background-color: rgba(14, 2, 16, 0.9);
   border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+  padding: 1rem 1.5rem; /* Matching landing page spacing */
 }
 
 .navbar > .navbar__inner {
@@ -209,11 +212,35 @@ pre {
   margin: 0 auto;
 }
 
-.navbar__title {
-  font-family: var(--ifm-heading-font-family);
-  font-weight: 700;
-  font-size: 1.5rem;
+/* Quickforge Logo Styles - Matching Landing Page Typography */
+.quickforge-logo {
+  font-size: 1.875rem; /* 30px - appropriate for navbar height while maintaining proportions */
+  font-weight: 500; /* Equivalent to Tailwind's font-medium */
+  letter-spacing: -0.017em; /* Fine-tuned to match landing page exactly */
   color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+.quickforge-logo__q {
+  font-family: 'Aeonik', system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.quickforge-logo__text {
+  font-family: 'Aeonik Fono', system-ui, sans-serif;
+  font-weight: 500;
+}
+
+/* Keep navbar__title for backwards compatibility but make it smaller */
+.navbar__title {
+  font-size: 1.875rem; /* Equivalent to Tailwind's text-3xl (30px) - smaller for navbar */
+  font-weight: 500; /* Equivalent to Tailwind's font-medium */
+  letter-spacing: -0.025em; /* Equivalent to Tailwind's tracking-tight */
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
 }
 
 .navbar__link {
@@ -393,8 +420,12 @@ table tbody tr:hover {
 
 /* Responsive Adjustments */
 @media (max-width: 996px) {
+  .quickforge-logo {
+    font-size: 2rem; /* Smaller on mobile but maintain proportions */
+  }
+  
   .navbar__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Smaller on mobile but maintain proportions */
   }
   
   .markdown {
