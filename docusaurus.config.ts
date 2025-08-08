@@ -78,13 +78,7 @@ const config: Config = {
       {name: 'twitter:site', content: '@quickforge'},
     ],
     navbar: {
-      items: [
-        {
-          href: 'https://quickforge.ai',
-          label: 'Main Site',
-          position: 'right',
-        },
-      ],
+      items: [],
     },
     footer: {
       style: 'dark',

@@ -1,0 +1,28 @@
+/* Talk to Us Button - Matching Landing Page Button Style Exactly */
+.mainSiteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Aeonik', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  background: rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.mainSiteButton:hover {
+  background: rgba(15, 23, 42, 0.3);
+  border-color: rgba(100, 116, 139, 0.7);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(71, 85, 105, 0.4);
+  transform: translateY(-1px);
+}
