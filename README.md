@@ -78,7 +78,7 @@ Rest of your post content...
 
 Authors are defined in `blog/authors.yml`:
 - `quickforge` - Quickforge Team
-- `greg` - Greg (Founder)
+- `greg` - Greg (Co-founder)
 - `alex` - Alex (Co-founder)
 
 ### Available Tags
