@@ -64,7 +64,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/quickforge-social-card.png',
     colorMode: {
       defaultMode: 'dark',

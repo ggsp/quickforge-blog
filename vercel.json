@@ -3,12 +3,6 @@
   "outputDirectory": "build",
   "framework": "docusaurus-2",
   "installCommand": "npm ci",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/fonts/(.*)",
