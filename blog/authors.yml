@@ -8,13 +8,13 @@ quickforge:
 greg:
   name: Greg
   title: Co-founder & Lead Automation Engineer
-  url: https://quickforge.ai
-  image_url: /img/authors/greg.jpg
+  url: https://github.com/ggsp
+  image_url: https://github.com/ggsp.png
   email: greg@quickforge.ai
 
 alex:
   name: Alex
   title: Co-founder & Head of Strategy
-  url: https://quickforge.ai
-  image_url: /img/authors/alex.jpg
+  url: https://github.com/Goldfoyle
+  image_url: https://github.com/Goldfoyle.png
   email: alex@quickforge.ai
