@@ -1,0 +1,53 @@
+/* Mobile Sidebar - Matching Landing Page Style */
+.mobileSidebar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border-right: 1px solid rgba(71, 85, 105, 0.3) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.mobileSidebarContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem 0;
+}
+
+.talkToUsContainer {
+  padding: 1rem 1.5rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+/* Mobile Talk to Us Button - Full Width */
+.mobileTalkToUs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Aeonik', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mobileTalkToUs:hover {
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(100, 116, 139, 0.8);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(71, 85, 105, 0.5);
+  transform: translateY(-1px);
+}
+
+.mobileTalkToUs:active {
+  transform: translateY(0);
+}
