@@ -32,7 +32,7 @@ function BlogPostPageContent({
   
   return (
     <Layout>
-      <div className="container margin-vert--lg">
+      <div className="container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
         <div className="row">
           <main className="col col--9" style={{ paddingRight: '3rem' }}>
             <ContentVisibility metadata={metadata} />
@@ -43,12 +43,14 @@ function BlogPostPageContent({
           </main>
           <aside className="col col--3">
             {!hideTableOfContents && (
-              <TabbedSidebar
-                sidebar={sidebar}
-                toc={toc}
-                tocMinHeadingLevel={tocMinHeadingLevel}
-                tocMaxHeadingLevel={tocMaxHeadingLevel}
-              />
+              <div style={{ height: 0, position: 'relative' }}>
+                <TabbedSidebar
+                  sidebar={sidebar}
+                  toc={toc}
+                  tocMinHeadingLevel={tocMinHeadingLevel}
+                  tocMaxHeadingLevel={tocMaxHeadingLevel}
+                />
+              </div>
             )}
           </aside>
         </div>
