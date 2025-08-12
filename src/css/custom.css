@@ -176,12 +176,10 @@ article.margin-bottom--xl {
   overflow: visible;
   transition: none;
   padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 article.margin-bottom--xl:hover {
   background-color: transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 
 /* Reading Time Enhancement */
@@ -634,3 +632,4 @@ article h2 {
   line-height: 1.15;
   color: rgba(255, 255, 255, 0.95);
 }
+
