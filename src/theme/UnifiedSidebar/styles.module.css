@@ -1,0 +1,165 @@
+.unifiedSidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0;
+}
+
+.tabButton {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tabButton:hover:not(:disabled) {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tabButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tabButton.active {
+  color: rgba(255, 255, 255, 1);
+}
+
+.tabButton.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--ifm-color-primary);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.tocWrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 0.5rem;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.tocWrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tocWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tocWrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.tocWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Force TOC to not have its own scrolling */
+.tocWrapper :global(.thin-scrollbar) {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.tocWrapper :global(.tableOfContents_src-theme-TOC-styles-module) {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.recentWrapper {
+  flex: 1;
+  overflow-y: auto;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.recentWrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.recentWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recentWrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.recentWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.recentNav {
+  /* Remove any default positioning/scrolling since we handle it at wrapper level */
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Blog sidebar item styles */
+.sidebarItemList {
+  font-size: 0.9rem;
+}
+
+.sidebarItem {
+  margin-top: 0.7rem;
+}
+
+.sidebarItemLink {
+  color: var(--ifm-font-color-base);
+  display: block;
+}
+
+.sidebarItemLink:hover {
+  text-decoration: none;
+}
+
+.sidebarItemLinkActive {
+  color: var(--ifm-color-primary) !important;
+}
+
+.yearGroupHeading {
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 996px) {
+  .unifiedSidebar {
+    display: none;
+  }
+}

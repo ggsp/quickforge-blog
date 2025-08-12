@@ -10,7 +10,7 @@ import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
-import TabbedSidebar from '@theme/BlogPostPage/TabbedSidebar';
+import UnifiedSidebar from '@theme/UnifiedSidebar';
 import ContentVisibility from '@theme/ContentVisibility';
 import type {Props} from '@theme/BlogPostPage';
 import type {BlogSidebar} from '@docusaurus/plugin-content-blog';
@@ -32,7 +32,7 @@ function BlogPostPageContent({
   
   return (
     <Layout>
-      <div className="container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+      <div className="container margin-vert--lg">
         <div className="row">
           <main className="col col--9" style={{ paddingRight: '3rem' }}>
             <ContentVisibility metadata={metadata} />
@@ -41,16 +41,14 @@ function BlogPostPageContent({
               <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
             )}
           </main>
-          <aside className="col col--3">
+          <aside className="col col--3" style={{ position: 'sticky', top: 'calc(var(--ifm-navbar-height) + 2rem)', height: 'fit-content' }}>
             {!hideTableOfContents && (
-              <div style={{ height: 0, position: 'relative' }}>
-                <TabbedSidebar
-                  sidebar={sidebar}
-                  toc={toc}
-                  tocMinHeadingLevel={tocMinHeadingLevel}
-                  tocMaxHeadingLevel={tocMaxHeadingLevel}
-                />
-              </div>
+              <UnifiedSidebar
+                sidebar={sidebar}
+                toc={toc}
+                tocMinHeadingLevel={tocMinHeadingLevel}
+                tocMaxHeadingLevel={tocMaxHeadingLevel}
+              />
             )}
           </aside>
         </div>

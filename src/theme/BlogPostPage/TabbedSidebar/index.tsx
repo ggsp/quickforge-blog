@@ -49,7 +49,9 @@ export default function TabbedSidebar({
       )}
       {activeTab === 'recent' && (
         <div className={styles.sidebarWrapper}>
-          <BlogSidebar sidebar={sidebar} />
+          <div className={styles.noTitle}>
+            <BlogSidebar sidebar={sidebar} />
+          </div>
         </div>
       )}
     </div>
