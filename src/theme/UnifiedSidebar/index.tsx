@@ -60,7 +60,7 @@ export default function UnifiedSidebar({
       </div>
 
       {activeTab === 'toc' && hasToc && (
-        <div 
+        <div
           className={styles.tocWrapper}
           onWheel={(e) => {
             // Prevent wheel events from bubbling to parent elements

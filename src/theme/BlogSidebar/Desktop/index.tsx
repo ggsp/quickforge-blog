@@ -1,17 +1,17 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 import clsx from 'clsx';
-import {translate} from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import {
   useVisibleBlogSidebarItems,
   BlogSidebarItemList,
 } from '@docusaurus/plugin-content-blog/client';
 import BlogSidebarContent from '@theme/BlogSidebar/Content';
-import type {Props as BlogSidebarContentProps} from '@theme/BlogSidebar/Content';
-import type {Props} from '@theme/BlogSidebar/Desktop';
+import type { Props as BlogSidebarContentProps } from '@theme/BlogSidebar/Content';
+import type { Props } from '@theme/BlogSidebar/Desktop';
 
 import styles from './styles.module.css';
 
-const ListComponent: BlogSidebarContentProps['ListComponent'] = ({items}) => {
+const ListComponent: BlogSidebarContentProps['ListComponent'] = ({ items }) => {
   return (
     <BlogSidebarItemList
       items={items}
@@ -23,15 +23,13 @@ const ListComponent: BlogSidebarContentProps['ListComponent'] = ({items}) => {
   );
 };
 
-function BlogSidebarDesktop({sidebar}: Props) {
+function BlogSidebarDesktop({ sidebar }: Props) {
   const items = useVisibleBlogSidebarItems(sidebar.items);
   return (
     <aside className="col col--3">
       <div className={styles.singleTabSidebar}>
         <div className={styles.tabButtons}>
-          <div className={`${styles.tabButton} ${styles.active}`}>
-            Recent posts
-          </div>
+          <div className={`${styles.tabButton} ${styles.active}`}>Recent posts</div>
         </div>
         <div className={styles.sidebarWrapper}>
           <nav
@@ -40,7 +38,8 @@ function BlogSidebarDesktop({sidebar}: Props) {
               id: 'theme.blog.sidebar.navAriaLabel',
               message: 'Blog recent posts navigation',
               description: 'The ARIA label for recent posts in the blog sidebar',
-            })}>
+            })}
+          >
             <BlogSidebarContent
               items={items}
               ListComponent={ListComponent}

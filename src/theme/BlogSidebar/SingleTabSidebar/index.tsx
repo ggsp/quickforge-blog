@@ -7,15 +7,11 @@ interface SingleTabSidebarProps {
   sidebar: BlogSidebarType;
 }
 
-export default function SingleTabSidebar({
-  sidebar,
-}: SingleTabSidebarProps): ReactNode {
+export default function SingleTabSidebar({ sidebar }: SingleTabSidebarProps): ReactNode {
   return (
     <div className={styles.singleTabSidebar}>
       <div className={styles.tabButtons}>
-        <div className={`${styles.tabButton} ${styles.active}`}>
-          Recent posts
-        </div>
+        <div className={`${styles.tabButton} ${styles.active}`}>Recent posts</div>
       </div>
       <div className={styles.sidebarWrapper}>
         <BlogSidebar sidebar={sidebar} />

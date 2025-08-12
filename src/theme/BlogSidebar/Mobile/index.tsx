@@ -1,16 +1,16 @@
-import React, {memo, type ReactNode} from 'react';
+import React, { memo, type ReactNode } from 'react';
 import {
   useVisibleBlogSidebarItems,
   BlogSidebarItemList,
 } from '@docusaurus/plugin-content-blog/client';
-import {NavbarSecondaryMenuFiller} from '@docusaurus/theme-common';
+import { NavbarSecondaryMenuFiller } from '@docusaurus/theme-common';
 import BlogSidebarContent from '@theme/BlogSidebar/Content';
-import type {Props} from '@theme/BlogSidebar/Mobile';
-import type {Props as BlogSidebarContentProps} from '@theme/BlogSidebar/Content';
+import type { Props } from '@theme/BlogSidebar/Mobile';
+import type { Props as BlogSidebarContentProps } from '@theme/BlogSidebar/Content';
 
 import styles from './styles.module.css';
 
-const ListComponent: BlogSidebarContentProps['ListComponent'] = ({items}) => {
+const ListComponent: BlogSidebarContentProps['ListComponent'] = ({ items }) => {
   return (
     <BlogSidebarItemList
       items={items}
@@ -22,7 +22,7 @@ const ListComponent: BlogSidebarContentProps['ListComponent'] = ({items}) => {
   );
 };
 
-function BlogSidebarMobileSecondaryMenu({sidebar}: Props): ReactNode {
+function BlogSidebarMobileSecondaryMenu({ sidebar }: Props): ReactNode {
   const items = useVisibleBlogSidebarItems(sidebar.items);
   return (
     <BlogSidebarContent
@@ -34,12 +34,7 @@ function BlogSidebarMobileSecondaryMenu({sidebar}: Props): ReactNode {
 }
 
 function BlogSidebarMobile(props: Props): ReactNode {
-  return (
-    <NavbarSecondaryMenuFiller
-      component={BlogSidebarMobileSecondaryMenu}
-      props={props}
-    />
-  );
+  return <NavbarSecondaryMenuFiller component={BlogSidebarMobileSecondaryMenu} props={props} />;
 }
 
 export default memo(BlogSidebarMobile);

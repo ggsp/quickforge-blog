@@ -42,7 +42,6 @@
   color: rgba(255, 255, 255, 1);
 }
 
-
 .tocWrapper {
   flex: 1;
   overflow-y: auto;
@@ -85,7 +84,7 @@
 }
 
 /* Disable TOC auto-scroll behaviors completely */
-.tocWrapper :global([class*="tableOfContents"]) {
+.tocWrapper :global([class*='tableOfContents']) {
   scroll-behavior: auto !important;
 }
 

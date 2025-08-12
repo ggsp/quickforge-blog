@@ -1,10 +1,7 @@
-import React, {type ReactNode} from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
-import {HtmlClassNameProvider, ThemeClassNames} from '@docusaurus/theme-common';
-import {
-  BlogPostProvider,
-  useBlogPost,
-} from '@docusaurus/plugin-content-blog/client';
+import { HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common';
+import { BlogPostProvider, useBlogPost } from '@docusaurus/plugin-content-blog/client';
 import Layout from '@theme/Layout';
 import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
@@ -12,8 +9,8 @@ import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
 import UnifiedSidebar from '@theme/UnifiedSidebar';
 import ContentVisibility from '@theme/ContentVisibility';
-import type {Props} from '@theme/BlogPostPage';
-import type {BlogSidebar} from '@docusaurus/plugin-content-blog';
+import type { Props } from '@theme/BlogPostPage';
+import type { BlogSidebar } from '@docusaurus/plugin-content-blog';
 
 function BlogPostPageContent({
   sidebar,
@@ -22,14 +19,14 @@ function BlogPostPageContent({
   sidebar: BlogSidebar;
   children: ReactNode;
 }): ReactNode {
-  const {metadata, toc} = useBlogPost();
-  const {nextItem, prevItem, frontMatter} = metadata;
+  const { metadata, toc } = useBlogPost();
+  const { nextItem, prevItem, frontMatter } = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
-  
+
   return (
     <Layout>
       <div className="container margin-vert--lg">
@@ -41,7 +38,14 @@ function BlogPostPageContent({
               <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
             )}
           </main>
-          <aside className="col col--3" style={{ position: 'sticky', top: 'calc(var(--ifm-navbar-height) + 2rem)', height: 'fit-content' }}>
+          <aside
+            className="col col--3"
+            style={{
+              position: 'sticky',
+              top: 'calc(var(--ifm-navbar-height) + 2rem)',
+              height: 'fit-content',
+            }}
+          >
             {!hideTableOfContents && (
               <UnifiedSidebar
                 sidebar={sidebar}
@@ -62,10 +66,8 @@ export default function BlogPostPage(props: Props): ReactNode {
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>
       <HtmlClassNameProvider
-        className={clsx(
-          ThemeClassNames.wrapper.blogPages,
-          ThemeClassNames.page.blogPostPage,
-        )}>
+        className={clsx(ThemeClassNames.wrapper.blogPages, ThemeClassNames.page.blogPostPage)}
+      >
         <BlogPostPageMetadata />
         <BlogPostPageStructuredData />
         <BlogPostPageContent sidebar={props.sidebar}>

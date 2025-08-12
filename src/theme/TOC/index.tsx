@@ -1,7 +1,7 @@
-import React, {type ReactNode} from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
-import type {Props} from '@theme/TOC';
+import type { Props } from '@theme/TOC';
 
 import styles from './styles.module.css';
 
@@ -10,7 +10,7 @@ import styles from './styles.module.css';
 const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
 const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
 
-export default function TOC({className, ...props}: Props): ReactNode {
+export default function TOC({ className, ...props }: Props): ReactNode {
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
       <TOCItems

@@ -1,25 +1,21 @@
-import React, {type ReactNode} from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {
-  PageMetadata,
-  HtmlClassNameProvider,
-  ThemeClassNames,
-} from '@docusaurus/theme-common';
+import { PageMetadata, HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common';
 import BlogLayout from '@theme/BlogLayout';
 import BlogListPaginator from '@theme/BlogListPaginator';
 import SearchMetadata from '@theme/SearchMetadata';
-import type {Props} from '@theme/BlogListPage';
+import type { Props } from '@theme/BlogListPage';
 import BlogPostItems from '@theme/BlogPostItems';
 import BlogListPageStructuredData from '@theme/BlogListPage/StructuredData';
 
 function BlogListPageMetadata(props: Props): ReactNode {
-  const {metadata} = props;
+  const { metadata } = props;
   const {
-    siteConfig: {title: siteTitle},
+    siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
-  const {blogDescription, blogTitle, permalink} = metadata;
+  const { blogDescription, blogTitle, permalink } = metadata;
   const isBlogOnlyMode = permalink === '/';
   const title = isBlogOnlyMode ? siteTitle : blogTitle;
   return (
@@ -31,7 +27,7 @@ function BlogListPageMetadata(props: Props): ReactNode {
 }
 
 function BlogListPageContent(props: Props): ReactNode {
-  const {metadata, items, sidebar} = props;
+  const { metadata, items, sidebar } = props;
   return (
     <BlogLayout sidebar={sidebar}>
       <BlogPostItems items={items} />
@@ -43,10 +39,8 @@ function BlogListPageContent(props: Props): ReactNode {
 export default function BlogListPage(props: Props): ReactNode {
   return (
     <HtmlClassNameProvider
-      className={clsx(
-        ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogListPage,
-      )}>
+      className={clsx(ThemeClassNames.wrapper.blogPages, ThemeClassNames.page.blogListPage)}
+    >
       <BlogListPageMetadata {...props} />
       <BlogListPageStructuredData {...props} />
       <BlogListPageContent {...props} />
