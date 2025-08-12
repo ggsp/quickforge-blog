@@ -55,7 +55,7 @@ export default function UnifiedSidebar({
           className={`${styles.tabButton} ${activeTab === 'recent' ? styles.active : ''}`}
           onClick={() => setActiveTab('recent')}
         >
-          Recent posts
+          All posts
         </button>
       </div>
 

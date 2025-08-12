@@ -45,7 +45,7 @@ const config: Config = {
           routeBasePath: '/',
           showReadingTime: true,
           blogSidebarTitle: 'Recent posts',
-          blogSidebarCount: 10,
+          blogSidebarCount: 'ALL',
           postsPerPage: 12,
           feedOptions: {
             type: 'all',

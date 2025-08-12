@@ -18,18 +18,22 @@ export default function BlogLayout(props: Props): ReactNode {
               'col--9': hasSidebar,
               'col--12': !hasSidebar,
             })}
-            style={{ paddingRight: hasSidebar ? '3rem' : undefined }}
+            style={{ 
+              paddingRight: hasSidebar ? '3rem' : undefined,
+              marginLeft: 0
+            }}
           >
             {children}
           </main>
           {hasSidebar && (
             <aside
-              className="col col--3"
               style={{
-                position: 'sticky',
+                position: 'fixed',
                 top: 'calc(var(--ifm-navbar-height) + 2rem)',
+                right: 'max(0px, calc((100vw - 80rem) / 2))',
+                width: 'calc((80rem * 0.25) - 1rem)',
                 height: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
-                maxHeight: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
+                zIndex: 10
               }}
             >
               <UnifiedSidebar sidebar={sidebar} />

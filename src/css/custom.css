@@ -633,3 +633,50 @@ article h2 {
   color: rgba(255, 255, 255, 0.95);
 }
 
+/* Fixed Sidebar Enhancements */
+
+/* Add subtle shadow to fixed sidebar for depth */
+aside[style*="position: fixed"] {
+  /* Subtle shadow for elevation effect */
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+  
+  /* Ensure sidebar content doesn't touch edges */
+  padding: 0 1rem;
+}
+
+/* Smooth transitions when sidebar appears/disappears */
+aside[style*="position: fixed"] .unifiedSidebar {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Ensure main content doesn't feel cramped */
+main.col--9 {
+  max-width: calc(100% - 1rem);
+  padding-right: 3rem !important;
+}
+
+/* Handle edge case for very wide screens */
+@media (min-width: 1920px) {
+  aside[style*="position: fixed"] {
+    right: calc((100vw - 80rem) / 2) !important;
+  }
+}
+
+/* Ensure proper container width */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+

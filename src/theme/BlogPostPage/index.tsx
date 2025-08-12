@@ -31,7 +31,7 @@ function BlogPostPageContent({
     <Layout>
       <div className="container margin-vert--lg">
         <div className="row">
-          <main className="col col--9" style={{ paddingRight: '3rem' }}>
+          <main className="col col--9" style={{ paddingRight: '3rem', marginLeft: 0 }}>
             <ContentVisibility metadata={metadata} />
             <BlogPostItem>{children}</BlogPostItem>
             {(nextItem || prevItem) && (
@@ -39,12 +39,13 @@ function BlogPostPageContent({
             )}
           </main>
           <aside
-            className="col col--3"
             style={{
-              position: 'sticky',
+              position: 'fixed',
               top: 'calc(var(--ifm-navbar-height) + 2rem)',
+              right: 'max(0px, calc((100vw - 80rem) / 2))',
+              width: 'calc((80rem * 0.25) - 1rem)',
               height: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
-              maxHeight: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
+              zIndex: 10
             }}
           >
             {!hideTableOfContents && (
