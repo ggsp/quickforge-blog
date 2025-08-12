@@ -60,7 +60,13 @@ export default function UnifiedSidebar({
       </div>
 
       {activeTab === 'toc' && hasToc && (
-        <div className={styles.tocWrapper}>
+        <div 
+          className={styles.tocWrapper}
+          onWheel={(e) => {
+            // Prevent wheel events from bubbling to parent elements
+            e.stopPropagation();
+          }}
+        >
           <TOC
             toc={toc}
             minHeadingLevel={tocMinHeadingLevel}

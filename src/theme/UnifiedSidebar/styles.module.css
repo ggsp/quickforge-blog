@@ -19,13 +19,14 @@
   color: rgba(255, 255, 255, 0.6);
   font-family: var(--ifm-font-family-base);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.75rem 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  text-align: left;
 }
 
 .tabButton:hover:not(:disabled) {
@@ -41,25 +42,6 @@
   color: rgba(255, 255, 255, 1);
 }
 
-.tabButton.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: var(--ifm-color-primary);
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
 
 .tocWrapper {
   flex: 1;
@@ -68,6 +50,8 @@
   /* Custom scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  /* Ensure independent scrolling */
+  overscroll-behavior: contain;
 }
 
 .tocWrapper::-webkit-scrollbar {
@@ -87,7 +71,7 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Force TOC to not have its own scrolling */
+/* Force TOC to not have its own scrolling and auto-scroll behaviors */
 .tocWrapper :global(.thin-scrollbar) {
   overflow: visible !important;
   max-height: none !important;
@@ -96,6 +80,17 @@
 .tocWrapper :global(.tableOfContents_src-theme-TOC-styles-module) {
   overflow: visible !important;
   max-height: none !important;
+  /* Disable any auto-scrolling behaviors */
+  scroll-behavior: auto !important;
+}
+
+/* Disable TOC auto-scroll behaviors completely */
+.tocWrapper :global([class*="tableOfContents"]) {
+  scroll-behavior: auto !important;
+}
+
+.tocWrapper :global(.table-of-contents) {
+  scroll-behavior: auto !important;
 }
 
 .recentWrapper {
