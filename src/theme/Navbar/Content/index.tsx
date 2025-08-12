@@ -1,9 +1,6 @@
 import React from 'react';
-import {useThemeConfig} from '@docusaurus/theme-common';
-import {
-  splitNavbarItems,
-  useNavbarMobileSidebar,
-} from '@docusaurus/theme-common/internal';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import { splitNavbarItems, useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import NavbarItem from '@theme/NavbarItem';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import SearchBar from '@theme/SearchBar';
@@ -20,11 +17,11 @@ function useNavbarItems() {
     {
       type: 'custom-main-site-button',
       position: 'right',
-    }
+    },
   ];
 }
 
-function NavbarItems({items}: {items: any[]}) {
+function NavbarItems({ items }: { items: any[] }) {
   return (
     <>
       {items.map((item, i) => {
@@ -41,21 +38,13 @@ function NavbarItems({items}: {items: any[]}) {
             </a>
           );
         }
-        return (
-          <NavbarItem {...item} key={i} />
-        );
+        return <NavbarItem {...item} key={i} />;
       })}
     </>
   );
 }
 
-function NavbarContentLayout({
-  left,
-  right,
-}: {
-  left: React.ReactNode;
-  right: React.ReactNode;
-}) {
+function NavbarContentLayout({ left, right }: { left: React.ReactNode; right: React.ReactNode }) {
   return (
     <div className="navbar__inner">
       <div className="navbar__items">{left}</div>

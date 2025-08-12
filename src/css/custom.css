@@ -86,49 +86,49 @@
   --ifm-color-primary-light: #a855f7;
   --ifm-color-primary-lighter: #c084fc;
   --ifm-color-primary-lightest: #d8b4fe;
-  
+
   /* Background Colors */
   --ifm-background-color: #0e0210;
   --ifm-background-surface-color: #1a0d1f;
-  
+
   /* Typography */
   --ifm-font-family-base: 'Aeonik', system-ui, sans-serif;
   --ifm-heading-font-family: 'Aeonik', system-ui, sans-serif;
   --ifm-font-family-monospace: 'Aeonik Mono', 'SF Mono', monospace;
   --ifm-code-font-size: 95%;
-  
+
   /* Code Highlighting */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  
+
   /* Navbar */
   --ifm-navbar-background-color: transparent;
   --ifm-navbar-height: 5rem;
   --ifm-navbar-padding-vertical: 1rem;
   --ifm-navbar-padding-horizontal: 1.5rem;
-  
+
   /* Footer */
   --ifm-footer-background-color: #0e0210;
-  
+
   /* Accent Yellow */
   --quickforge-accent-yellow: #eab308;
   --quickforge-accent-yellow-dark: #ca8a04;
-  
+
   /* Text Colors */
   --ifm-color-content: #ffffff;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.8);
-  
+
   /* Links */
   --ifm-link-color: rgba(255, 255, 255, 0.8);
   --ifm-link-hover-color: rgba(255, 255, 255, 1);
-  
+
   /* Borders */
   --ifm-color-emphasis-300: rgba(255, 255, 255, 0.12);
   --ifm-color-emphasis-600: rgba(255, 255, 255, 0.25);
-  
+
   /* Cards and Surfaces */
   --ifm-card-background-color: var(--ifm-background-surface-color);
   --ifm-dropdown-background-color: var(--ifm-background-surface-color);
-  
+
   /* Force dark mode colors */
   --ifm-color-scheme: dark;
 }
@@ -151,7 +151,12 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--ifm-heading-font-family);
   font-weight: 700;
   color: var(--ifm-color-content);
@@ -270,7 +275,6 @@ pre {
   color: var(--ifm-color-primary);
 }
 
-
 /* Footer Enhancements */
 .footer {
   background: linear-gradient(180deg, #0e0210 0%, #1a0d1f 100%);
@@ -324,7 +328,6 @@ pre {
   padding: 1rem 0;
   border: none;
 }
-
 
 /* Style Recent Posts section */
 .blog-sidebar h3 {
@@ -465,8 +468,6 @@ table tbody tr:hover {
   border-left-color: rgba(255, 255, 255, 0.3);
 }
 
-
-
 /* Admonitions */
 .admonition {
   background-color: rgba(255, 255, 255, 0.02);
@@ -545,7 +546,6 @@ table tbody tr:hover {
 
 /* Responsive Adjustments */
 
-
 /* Date styling - minimal and elegant */
 article time {
   color: rgba(255, 255, 255, 0.35);
@@ -555,41 +555,40 @@ article time {
 }
 
 @media (max-width: 996px) {
-  
   .quickforge-logo {
     font-size: 1.5rem; /* Smaller on mobile but maintain proportions */
   }
-  
+
   .navbar__title {
     font-size: 1.25rem; /* Smaller on mobile but maintain proportions */
   }
-  
+
   .markdown {
     font-size: 1rem;
   }
-  
+
   /* Ensure proper mobile menu positioning */
   .navbar-sidebar__brand {
     width: 280px;
     max-width: 80vw;
   }
-  
+
   .markdown h1 {
     font-size: 2rem;
   }
-  
+
   .markdown h2 {
     font-size: 1.5rem;
   }
-  
+
   article h2 {
     font-size: 2rem;
   }
-  
+
   .markdown h3 {
     font-size: 1.25rem;
   }
-  
+
   article.margin-bottom--xl {
     padding: 2rem 0;
   }
@@ -635,4 +634,3 @@ article h2 {
   line-height: 1.15;
   color: rgba(255, 255, 255, 0.95);
 }
-

@@ -5,13 +5,14 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Root({ children }: { children: React.ReactNode }) {
   const { siteConfig } = useDocusaurusContext();
-  
+
   useEffect(() => {
     // Initialize PostHog only in browser environment and if key is provided
     if (ExecutionEnvironment.canUseDOM && siteConfig.customFields?.posthogKey) {
       const posthogKey = siteConfig.customFields.posthogKey as string;
-      const posthogHost = (siteConfig.customFields.posthogHost as string) || 'https://app.posthog.com';
-      
+      const posthogHost =
+        (siteConfig.customFields.posthogHost as string) || 'https://app.posthog.com';
+
       posthog.init(posthogKey, {
         api_host: posthogHost,
         capture_pageview: true,
@@ -21,7 +22,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
           if (window.location.hostname === 'localhost') {
             posthog.opt_out_capturing();
           }
-        }
+        },
       });
     }
   }, [siteConfig]);

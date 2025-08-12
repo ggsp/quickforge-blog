@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -77,11 +77,23 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     metadata: [
-      {name: 'keywords', content: 'AI automation, business automation, workflow optimization, CRM integration, ERP automation, AI consulting'},
-      {name: 'description', content: 'Learn how to implement practical AI automation solutions that connect to your existing business tools. Real implementation guides and case studies.'},
-      {property: 'og:description', content: 'Learn how to implement practical AI automation solutions that connect to your existing business tools. Real implementation guides and case studies.'},
-      {name: 'twitter:card', content: 'summary_large_image'},
-      {name: 'twitter:site', content: '@quickforge'},
+      {
+        name: 'keywords',
+        content:
+          'AI automation, business automation, workflow optimization, CRM integration, ERP automation, AI consulting',
+      },
+      {
+        name: 'description',
+        content:
+          'Learn how to implement practical AI automation solutions that connect to your existing business tools. Real implementation guides and case studies.',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Learn how to implement practical AI automation solutions that connect to your existing business tools. Real implementation guides and case studies.',
+      },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@quickforge' },
     ],
     navbar: {
       items: [],

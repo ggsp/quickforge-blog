@@ -5,6 +5,7 @@ This is the official blog for Quickforge, focused on practical AI automation sol
 ## Overview
 
 Built with Docusaurus 2, this blog features:
+
 - Custom Quickforge branding and design system
 - SEO optimization for maximum visibility
 - PostHog analytics integration
@@ -77,6 +78,7 @@ Rest of your post content...
 ### Available Authors
 
 Authors are defined in `blog/authors.yml`:
+
 - `quickforge` - Quickforge Team
 - `greg` - Greg (Co-founder)
 - `alex` - Alex (Co-founder)
@@ -84,6 +86,7 @@ Authors are defined in `blog/authors.yml`:
 ### Available Tags
 
 Tags are defined in `blog/tags.yml`:
+
 - `ai-automation` - General AI automation topics
 - `case-study` - Client success stories
 - `integration` - Tool integration guides
@@ -107,10 +110,12 @@ Tags are defined in `blog/tags.yml`:
 ### GitHub Actions
 
 The project includes a GitHub Actions workflow that:
+
 1. Runs type checking and builds on every PR
 2. Deploys to Vercel on merge to main
 
 Required GitHub Secrets:
+
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
 - `VERCEL_PROJECT_ID`
@@ -144,6 +149,7 @@ npm run build
 ## Analytics
 
 PostHog is integrated for privacy-friendly analytics:
+
 - Page views are automatically tracked
 - Custom events can be added in blog posts
 - Dashboard available at app.posthog.com
@@ -159,6 +165,7 @@ PostHog is integrated for privacy-friendly analytics:
 ## Support
 
 For questions or issues:
+
 - Create an issue in this repository
 - Contact the team at team@quickforge.ai
 - Visit [quickforge.ai](https://quickforge.ai)

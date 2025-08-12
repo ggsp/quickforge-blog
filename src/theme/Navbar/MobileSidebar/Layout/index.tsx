@@ -1,6 +1,6 @@
 import React from 'react';
-import {useNavbarMobileSidebar} from '@docusaurus/theme-common/internal';
-import {translate} from '@docusaurus/Translate';
+import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
 import NavbarMobileSidebarHeader from '@theme/Navbar/MobileSidebar/Header';
 import NavbarMobileSidebarPrimaryMenu from '@theme/Navbar/MobileSidebar/PrimaryMenu';
 import NavbarMobileSidebarSecondaryMenu from '@theme/Navbar/MobileSidebar/SecondaryMenu';
@@ -8,8 +8,8 @@ import NavbarMobileSidebarSecondaryMenu from '@theme/Navbar/MobileSidebar/Second
 import styles from './styles.module.css';
 
 export default function NavbarMobileSidebarLayout(): JSX.Element {
-  const {shown} = useNavbarMobileSidebar();
-  
+  const { shown } = useNavbarMobileSidebar();
+
   return (
     <div className="navbar-sidebar">
       <div className="navbar-sidebar__backdrop" role="presentation" />
