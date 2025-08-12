@@ -38,22 +38,20 @@ export default function TabbedSidebar({
           Recent posts
         </button>
       </div>
-      <div className={styles.tabContent}>
-        {activeTab === 'toc' && hasToc && (
-          <div className={styles.tocWrapper}>
-            <TOC
-              toc={toc}
-              minHeadingLevel={tocMinHeadingLevel}
-              maxHeadingLevel={tocMaxHeadingLevel}
-            />
-          </div>
-        )}
-        {activeTab === 'recent' && (
-          <div className={styles.sidebarWrapper}>
-            <BlogSidebar sidebar={sidebar} />
-          </div>
-        )}
-      </div>
+      {activeTab === 'toc' && hasToc && (
+        <div className={styles.tocWrapper}>
+          <TOC
+            toc={toc}
+            minHeadingLevel={tocMinHeadingLevel}
+            maxHeadingLevel={tocMaxHeadingLevel}
+          />
+        </div>
+      )}
+      {activeTab === 'recent' && (
+        <div className={styles.sidebarWrapper}>
+          <BlogSidebar sidebar={sidebar} />
+        </div>
+      )}
     </div>
   );
 }
