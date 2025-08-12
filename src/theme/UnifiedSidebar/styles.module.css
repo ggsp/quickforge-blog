@@ -7,7 +7,7 @@
 .tabButtons {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0;
 }
@@ -18,7 +18,7 @@
   border: none;
   color: rgba(255, 255, 255, 0.6);
   font-family: var(--ifm-font-family-base);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.75rem 0.5rem;
   cursor: pointer;
@@ -46,7 +46,7 @@
 .tocWrapper {
   flex: 1;
   overflow-y: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.25rem;
   /* Custom scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -96,6 +96,7 @@
 .recentWrapper {
   flex: 1;
   overflow-y: auto;
+  padding-top: 0.25rem;
   /* Custom scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -125,31 +126,84 @@
   overflow: visible;
 }
 
-/* Blog sidebar item styles */
+/* Blog sidebar item styles - match TOC styling */
 .sidebarItemList {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  padding-left: 0 !important;
 }
 
 .sidebarItem {
-  margin-top: 0.7rem;
+  margin-top: 0.4rem;
 }
 
 .sidebarItemLink {
-  color: var(--ifm-font-color-base);
+  color: rgba(255, 255, 255, 0.6) !important; /* Match TOC non-active color */
   display: block;
+  padding-left: 12px !important; /* Match TOC padding */
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
+  transition: color 0.2s ease;
+  position: relative !important;
 }
 
 .sidebarItemLink:hover {
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
+/* Active recent post - purple dot + white text (not purple text) */
 .sidebarItemLinkActive {
-  color: var(--ifm-color-primary) !important;
+  color: rgba(255, 255, 255, 1) !important; /* White text, not purple */
+}
+
+.sidebarItemLinkActive::before {
+  content: '•' !important;
+  position: absolute !important;
+  left: -2px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: var(--ifm-color-primary) !important; /* Purple dot */
+  font-size: 12px !important;
+  font-weight: bold !important;
 }
 
 .yearGroupHeading {
   margin-top: 1.6rem;
   margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Remove TOC left border and add consistent padding */
+.tocWrapper :global(.table-of-contents) {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+/* TOC item base styling */
+.tocWrapper :global(.table-of-contents__link) {
+  color: rgba(255, 255, 255, 0.6) !important; /* All non-active sections */
+  transition: color 0.2s ease;
+  padding-left: 12px !important; /* Add consistent padding */
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
+  font-size: 1rem !important; /* Match blog post size */
+}
+
+/* Current/active section - purple dot + white text */
+.tocWrapper :global(a.table-of-contents__link--active) {
+  position: relative !important;
+  color: rgba(255, 255, 255, 1) !important; /* White text for current */
+}
+
+.tocWrapper :global(a.table-of-contents__link--active::before) {
+  content: '•' !important;
+  position: absolute !important;
+  left: -2px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: var(--ifm-color-primary) !important; /* Purple dot */
+  font-size: 12px !important;
+  font-weight: bold !important;
 }
 
 /* Mobile responsiveness */
