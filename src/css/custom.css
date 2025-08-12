@@ -237,6 +237,21 @@ pre {
   font-weight: 500;
 }
 
+.quickforge-logo__separator {
+  font-family: 'Aeonik', system-ui, sans-serif;
+  font-weight: 300;
+  margin: 0 0.5rem;
+  opacity: 0.4;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.quickforge-logo__blog {
+  font-family: 'Aeonik', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* Keep navbar__title for backwards compatibility but make it smaller */
 .navbar__title {
   font-size: 1.875rem; /* Equivalent to Tailwind's text-3xl (30px) - smaller for navbar */

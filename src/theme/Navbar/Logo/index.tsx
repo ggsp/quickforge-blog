@@ -14,6 +14,8 @@ export default function Logo(): JSX.Element {
       <div className="quickforge-logo">
         <span className="quickforge-logo__q">Q</span>
         <span className="quickforge-logo__text">uickforge</span>
+        <span className="quickforge-logo__separator" aria-hidden="true">/</span>
+        <span className="quickforge-logo__blog">Blog</span>
       </div>
     </Link>
   );
