@@ -23,7 +23,15 @@ export default function BlogLayout(props: Props): ReactNode {
             {children}
           </main>
           {hasSidebar && (
-            <aside className="col col--3">
+            <aside
+              className="col col--3"
+              style={{
+                position: 'sticky',
+                top: 'calc(var(--ifm-navbar-height) + 2rem)',
+                height: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
+                maxHeight: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
+              }}
+            >
               <UnifiedSidebar sidebar={sidebar} />
             </aside>
           )}

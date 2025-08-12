@@ -43,7 +43,8 @@ function BlogPostPageContent({
             style={{
               position: 'sticky',
               top: 'calc(var(--ifm-navbar-height) + 2rem)',
-              height: 'fit-content',
+              height: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
+              maxHeight: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
             }}
           >
             {!hideTableOfContents && (
