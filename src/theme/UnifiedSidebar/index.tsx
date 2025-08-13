@@ -27,6 +27,7 @@ export default function UnifiedSidebar({
   const hasToc = toc && toc.length > 0;
   const [activeTab, setActiveTab] = useState<'toc' | 'recent'>(hasToc ? 'toc' : 'recent');
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const [isScrolledFromTop, setIsScrolledFromTop] = useState(false);
   const tocWrapperRef = useRef<HTMLDivElement>(null);
   const sidebarItems = useVisibleBlogSidebarItems(sidebar.items);
 
@@ -38,7 +39,12 @@ export default function UnifiedSidebar({
     const checkScrollPosition = () => {
       const { scrollTop, scrollHeight, clientHeight } = tocWrapper;
       const threshold = 5; // Small threshold to account for rounding errors
+      
+      // Check if at bottom
       setIsAtBottom(scrollTop + clientHeight >= scrollHeight - threshold);
+      
+      // Check if scrolled from top (show top fade after scrolling down a bit)
+      setIsScrolledFromTop(scrollTop > 10); // Show fade after scrolling 10px from top
     };
 
     // Initial check
@@ -71,7 +77,8 @@ export default function UnifiedSidebar({
 
   return (
     <div className={clsx(styles.unifiedSidebar, {
-      [styles.atBottom]: activeTab === 'toc' && isAtBottom
+      [styles.atBottom]: activeTab === 'toc' && isAtBottom,
+      [styles.scrolledFromTop]: activeTab === 'toc' && isScrolledFromTop
     })}>
       <div className={styles.tabButtons}>
         {hasToc && (
