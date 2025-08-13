@@ -71,6 +71,8 @@
   /* Ensure independent scrolling */
   overscroll-behavior: contain;
   position: relative;
+  /* Smooth scrolling for programmatic scrolls */
+  scroll-behavior: smooth;
 }
 
 .tocWrapper::-webkit-scrollbar {

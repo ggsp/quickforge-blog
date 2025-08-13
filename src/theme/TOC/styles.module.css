@@ -1,9 +1,8 @@
 .tableOfContents {
+  /* Let the UnifiedSidebar handle scrolling and positioning */
   max-height: none;
   overflow: visible;
   position: static;
-  /* Disable smooth scrolling behaviors */
-  scroll-behavior: auto !important;
 }
 
 @media (max-width: 996px) {
