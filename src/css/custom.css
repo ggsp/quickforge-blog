@@ -125,8 +125,8 @@
   --blog-title-color: rgba(255, 255, 255, 0.95);
 
   /* Links */
-  --ifm-link-color: rgba(255, 255, 255, 0.8);
-  --ifm-link-hover-color: rgba(255, 255, 255, 1);
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary-light);
 
   /* Borders */
   --ifm-color-emphasis-300: rgba(255, 255, 255, 0.12);
@@ -299,9 +299,8 @@ pre {
 
 /* Footer Enhancements */
 .footer {
-  background: linear-gradient(180deg, #0e0210 0%, #1a0d1f 100%);
+  background: var(--ifm-background-color);
   color: #ffffff;
-  border-top: 1px solid rgba(168, 85, 247, 0.1);
 }
 
 .footer__copyright {

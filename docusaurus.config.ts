@@ -100,7 +100,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Quickforge. AI Automation That Actually Works.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Quickforge.`,
     },
     prism: {
       theme: prismThemes.vsDark,
