@@ -24,40 +24,24 @@ export default function BlogPostItemFooter(): ReactNode {
     return null;
   }
 
-  // BlogPost footer - details view (full post page - keep tags here)
+  // BlogPost footer - details view (full post page - tags now moved to header)
   const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
-  const { tags } = metadata;
-  const tagsExists = tags.length > 0;
 
-  // Import TagsListInline only for the blog post page
-  const TagsListInline = require('@theme/TagsListInline').default;
+  if (!canDisplayEditMetaRow) {
+    return null;
+  }
 
   return (
     <footer className="docusaurus-mt-lg">
-      {tagsExists && (
-        <div
-          className={clsx(
-            'row',
-            'margin-top--sm',
-            ThemeClassNames.blog.blogFooterEditMetaRow,
-          )}
-        >
-          <div className="col">
-            <TagsListInline tags={tags} />
-          </div>
-        </div>
-      )}
-      {canDisplayEditMetaRow && (
-        <EditMetaRow
-          className={clsx(
-            'margin-top--sm',
-            ThemeClassNames.blog.blogFooterEditMetaRow,
-          )}
-          editUrl={editUrl}
-          lastUpdatedAt={lastUpdatedAt}
-          lastUpdatedBy={lastUpdatedBy}
-        />
-      )}
+      <EditMetaRow
+        className={clsx(
+          'margin-top--sm',
+          ThemeClassNames.blog.blogFooterEditMetaRow,
+        )}
+        editUrl={editUrl}
+        lastUpdatedAt={lastUpdatedAt}
+        lastUpdatedBy={lastUpdatedBy}
+      />
     </footer>
   );
 }
