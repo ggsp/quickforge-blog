@@ -36,7 +36,7 @@ export default function AnimatedLogo(): JSX.Element {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Q - Inter */}
+        {/* Q */}
         <motion.span
           className="quickforge-logo__q"
           initial={{ opacity: 1, x: 0 }}
@@ -53,7 +53,7 @@ export default function AnimatedLogo(): JSX.Element {
           Q
         </motion.span>
 
-        {/* uickforge - Inter */}
+        {/* uickforge */}
         {'uickforge'.split('').map((letter, index) => {
           // Only show 'f' when scrolled (index 4 is 'f')
           const isF = index === 4;
@@ -91,7 +91,7 @@ export default function AnimatedLogo(): JSX.Element {
           );
         })}
 
-        {/* Separator - Inter */}
+        {/* Separator */}
         <motion.span
           className="quickforge-logo__separator"
           aria-hidden="true"
@@ -119,7 +119,7 @@ export default function AnimatedLogo(): JSX.Element {
           /
         </motion.span>
 
-        {/* Blog sub-wordmark - Inter */}
+        {/* Blog sub-wordmark */}
         {'Blog'.split('').map((letter, index) => {
           // Only show 'B' when scrolled (index 0 is 'B')
           const isB = index === 0;
