@@ -28,7 +28,10 @@ export default function UnifiedSidebar({
   const [activeTab, setActiveTab] = useState<'toc' | 'recent'>(hasToc ? 'toc' : 'recent');
   const [isAtBottom, setIsAtBottom] = useState(false);
   const [isScrolledFromTop, setIsScrolledFromTop] = useState(false);
+  const [recentAtBottom, setRecentAtBottom] = useState(false);
+  const [recentScrolledFromTop, setRecentScrolledFromTop] = useState(false);
   const tocWrapperRef = useRef<HTMLDivElement>(null);
+  const recentWrapperRef = useRef<HTMLDivElement>(null);
   const sidebarItems = useVisibleBlogSidebarItems(sidebar.items);
 
   // Check if TOC is scrolled to bottom
@@ -63,6 +66,38 @@ export default function UnifiedSidebar({
     };
   }, [activeTab]);
 
+  // Check if Recent posts is scrolled to bottom
+  useEffect(() => {
+    const recentWrapper = recentWrapperRef.current;
+    if (!recentWrapper || activeTab !== 'recent') return;
+
+    const checkRecentScrollPosition = () => {
+      const { scrollTop, scrollHeight, clientHeight } = recentWrapper;
+      const threshold = 5; // Small threshold to account for rounding errors
+      
+      // Check if at bottom
+      setRecentAtBottom(scrollTop + clientHeight >= scrollHeight - threshold);
+      
+      // Check if scrolled from top (show top fade after scrolling down a bit)
+      setRecentScrolledFromTop(scrollTop > 10); // Show fade after scrolling 10px from top
+    };
+
+    // Initial check
+    checkRecentScrollPosition();
+
+    // Listen for scroll events
+    recentWrapper.addEventListener('scroll', checkRecentScrollPosition, { passive: true });
+    
+    // Also check on resize in case content changes
+    const resizeObserver = new ResizeObserver(checkRecentScrollPosition);
+    resizeObserver.observe(recentWrapper);
+
+    return () => {
+      recentWrapper.removeEventListener('scroll', checkRecentScrollPosition);
+      resizeObserver.disconnect();
+    };
+  }, [activeTab]);
+
   const ListComponent = ({ items }: { items: any[] }) => {
     return (
       <BlogSidebarItemList
@@ -78,7 +113,9 @@ export default function UnifiedSidebar({
   return (
     <div className={clsx(styles.unifiedSidebar, {
       [styles.atBottom]: activeTab === 'toc' && isAtBottom,
-      [styles.scrolledFromTop]: activeTab === 'toc' && isScrolledFromTop
+      [styles.scrolledFromTop]: activeTab === 'toc' && isScrolledFromTop,
+      [styles.recentAtBottom]: activeTab === 'recent' && recentAtBottom,
+      [styles.recentScrolledFromTop]: activeTab === 'recent' && recentScrolledFromTop
     })}>
       <div className={styles.tabButtons}>
         {hasToc && (
@@ -115,7 +152,7 @@ export default function UnifiedSidebar({
       )}
 
       {activeTab === 'recent' && (
-        <div className={styles.recentWrapper}>
+        <div ref={recentWrapperRef} className={styles.recentWrapper}>
           <nav
             className={styles.recentNav}
             aria-label={translate({

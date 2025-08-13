@@ -24,13 +24,33 @@
   transition: opacity 0.3s ease;
 }
 
-/* Hide fade-out when scrolled to bottom */
+/* Hide fade-out when scrolled to bottom - TOC */
 .unifiedSidebar.atBottom::after {
   opacity: 0;
 }
 
-/* Top fade-in effect - only visible when scrolled from top */
+/* Hide fade-out when scrolled to bottom - Recent posts */
+.unifiedSidebar.recentAtBottom::after {
+  opacity: 0;
+}
+
+/* Top fade-in effect - only visible when scrolled from top - TOC */
 .unifiedSidebar.scrolledFromTop::before {
+  content: '';
+  position: absolute;
+  top: 44px; /* Position below tab buttons */
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 30%, var(--ifm-background-color) 100%);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Top fade-in effect - only visible when scrolled from top - Recent posts */
+.unifiedSidebar.recentScrolledFromTop::before {
   content: '';
   position: absolute;
   top: 44px; /* Position below tab buttons */
