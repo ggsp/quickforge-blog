@@ -264,6 +264,12 @@ pre {
   font-weight: 500;
 }
 
+/* Individual letter styling for animations */
+.quickforge-logo__text-letter {
+  font-family: 'Aeonik Fono', system-ui, sans-serif;
+  font-weight: 500;
+}
+
 .quickforge-logo__separator {
   font-family: 'Aeonik', system-ui, sans-serif;
   font-weight: 300;
@@ -273,6 +279,14 @@ pre {
 }
 
 .quickforge-logo__blog {
+  font-family: 'Aeonik', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Individual blog letter styling for animations */
+.quickforge-logo__blog-letter {
   font-family: 'Aeonik', system-ui, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
