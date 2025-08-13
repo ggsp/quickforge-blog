@@ -15,6 +15,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
 
       posthog.init(posthogKey, {
         api_host: posthogHost,
+        ui_host: 'https://eu.posthog.com',
         capture_pageview: true,
         capture_pageleave: true,
         loaded: (posthog) => {

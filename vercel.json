@@ -3,6 +3,16 @@
   "outputDirectory": "build",
   "framework": "docusaurus-2",
   "installCommand": "npm ci",
+  "rewrites": [
+    {
+      "source": "/ingest/static/:path*",
+      "destination": "https://eu-assets.i.posthog.com/static/:path*"
+    },
+    {
+      "source": "/ingest/:path*",
+      "destination": "https://eu.i.posthog.com/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/fonts/(.*)",
