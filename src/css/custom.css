@@ -199,7 +199,7 @@ article.margin-bottom--xl:not(:last-child)::after {
   left: 0;
   right: 0;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(71, 85, 105, 0.6);
 }
 
 article.margin-bottom--xl:hover {
