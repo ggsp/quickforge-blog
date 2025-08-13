@@ -21,6 +21,12 @@
   pointer-events: none;
   z-index: 2;
   border-radius: 0 0 8px 8px;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide fade-out when scrolled to bottom */
+.unifiedSidebar.atBottom::after {
+  opacity: 0;
 }
 
 .tabButtons {

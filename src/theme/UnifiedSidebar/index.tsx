@@ -1,4 +1,4 @@
-import React, { useState, type ReactNode } from 'react';
+import React, { useState, useEffect, useRef, type ReactNode } from 'react';
 import { translate } from '@docusaurus/Translate';
 import {
   useVisibleBlogSidebarItems,
@@ -26,7 +26,36 @@ export default function UnifiedSidebar({
 }: UnifiedSidebarProps): ReactNode {
   const hasToc = toc && toc.length > 0;
   const [activeTab, setActiveTab] = useState<'toc' | 'recent'>(hasToc ? 'toc' : 'recent');
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const tocWrapperRef = useRef<HTMLDivElement>(null);
   const sidebarItems = useVisibleBlogSidebarItems(sidebar.items);
+
+  // Check if TOC is scrolled to bottom
+  useEffect(() => {
+    const tocWrapper = tocWrapperRef.current;
+    if (!tocWrapper || activeTab !== 'toc') return;
+
+    const checkScrollPosition = () => {
+      const { scrollTop, scrollHeight, clientHeight } = tocWrapper;
+      const threshold = 5; // Small threshold to account for rounding errors
+      setIsAtBottom(scrollTop + clientHeight >= scrollHeight - threshold);
+    };
+
+    // Initial check
+    checkScrollPosition();
+
+    // Listen for scroll events
+    tocWrapper.addEventListener('scroll', checkScrollPosition, { passive: true });
+    
+    // Also check on resize in case content changes
+    const resizeObserver = new ResizeObserver(checkScrollPosition);
+    resizeObserver.observe(tocWrapper);
+
+    return () => {
+      tocWrapper.removeEventListener('scroll', checkScrollPosition);
+      resizeObserver.disconnect();
+    };
+  }, [activeTab]);
 
   const ListComponent = ({ items }: { items: any[] }) => {
     return (
@@ -41,7 +70,9 @@ export default function UnifiedSidebar({
   };
 
   return (
-    <div className={styles.unifiedSidebar}>
+    <div className={clsx(styles.unifiedSidebar, {
+      [styles.atBottom]: activeTab === 'toc' && isAtBottom
+    })}>
       <div className={styles.tabButtons}>
         {hasToc && (
           <button
@@ -61,6 +92,7 @@ export default function UnifiedSidebar({
 
       {activeTab === 'toc' && hasToc && (
         <div
+          ref={tocWrapperRef}
           className={styles.tocWrapper}
           onWheel={(e) => {
             // Prevent wheel events from bubbling to parent elements
