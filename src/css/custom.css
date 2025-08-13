@@ -544,9 +544,7 @@ header .margin-vert--md {
 }
 
 @media (max-width: 996px) {
-  .quickforge-logo {
-    font-size: 1.5rem; /* Smaller on mobile but maintain proportions */
-  }
+  /* Keep logo same size as desktop to match landing page behavior */
 
   .navbar__title {
     font-size: 1.25rem; /* Smaller on mobile but maintain proportions */
