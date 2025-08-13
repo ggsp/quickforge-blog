@@ -117,6 +117,13 @@
   --ifm-color-content: #ffffff;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.8);
 
+  /* Blog Title Consistency Variables */
+  --blog-title-size: 3rem;
+  --blog-title-weight: 700;
+  --blog-title-spacing: -0.025em;
+  --blog-title-height: 1.15;
+  --blog-title-color: rgba(255, 255, 255, 0.95);
+
   /* Links */
   --ifm-link-color: rgba(255, 255, 255, 0.8);
   --ifm-link-hover-color: rgba(255, 255, 255, 1);
@@ -176,6 +183,11 @@ article.margin-bottom--xl {
   overflow: visible;
   transition: none;
   padding: 2.5rem 0;
+}
+
+/* Remove top padding from first article to align with blog post page */
+article.margin-bottom--xl:first-child {
+  padding-top: 0;
 }
 
 article.margin-bottom--xl:hover {
@@ -382,17 +394,20 @@ pre {
 
 /* Blog Post Content */
 .markdown {
-  font-size: 1.125rem;
-  line-height: 1.75;
+  font-size: 1.25rem;
+  line-height: 1.6;
   color: var(--ifm-color-content);
 }
 
 .markdown h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
 }
+
 
 .markdown h2 {
   font-size: 2rem;
@@ -546,10 +561,25 @@ table tbody tr:hover {
 
 /* Date styling - minimal and elegant */
 article time {
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 0.875rem;
-  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 0.02em;
+}
+
+/* Blog post header info styling - date and reading time */
+.margin-vert--md {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* Specifically target the header info container */
+header .margin-vert--md {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 996px) {
@@ -562,7 +592,7 @@ article time {
   }
 
   .markdown {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 
   /* Ensure proper mobile menu positioning */
@@ -623,14 +653,24 @@ article .markdown p:first-of-type {
   letter-spacing: -0.01em;
 }
 
-/* Make titles more prominent when description is present */
-article h2 {
-  font-size: 2.75rem;
-  font-weight: 700;
+/* Blog List Page Titles - using CSS variables for consistency */
+article h2,
+article h2 a {
+  font-size: var(--blog-title-size);
+  font-weight: var(--blog-title-weight);
+  letter-spacing: var(--blog-title-spacing);
+  line-height: var(--blog-title-height);
+  color: var(--blog-title-color);
   margin-bottom: 1rem;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
-  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Individual Blog Post Page Titles - using same variables */
+article header h1[class*="title_"] {
+  font-size: var(--blog-title-size);
+  font-weight: var(--blog-title-weight);
+  letter-spacing: var(--blog-title-spacing);
+  line-height: var(--blog-title-height);
+  color: var(--blog-title-color);
 }
 
 /* Fixed Sidebar Enhancements */
