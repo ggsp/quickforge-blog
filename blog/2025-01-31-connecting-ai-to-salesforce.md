@@ -42,18 +42,18 @@ const automationTargets = {
   leadScoring: {
     timeSpent: '4 hours/week',
     accuracy: '65%',
-    potential: 'High'
+    potential: 'High',
   },
   dataEntry: {
     timeSpent: '12 hours/week',
     accuracy: '85%',
-    potential: 'Very High'
+    potential: 'Very High',
   },
   emailClassification: {
     timeSpent: '6 hours/week',
     accuracy: '70%',
-    potential: 'High'
-  }
+    potential: 'High',
+  },
 };
 ```
 
@@ -67,11 +67,7 @@ const automationTargets = {
 
 ```json
 {
-  "oauth_scopes": [
-    "api",
-    "refresh_token",
-    "offline_access"
-  ],
+  "oauth_scopes": ["api", "refresh_token", "offline_access"],
   "callback_url": "https://your-automation-platform.com/callback"
 }
 ```
@@ -97,24 +93,24 @@ class SalesforceLeadScorer:
     def __init__(self, credentials):
         self.sf = salesforce_api.connect(credentials)
         self.model = LeadScoringModel()
-    
+
     def score_leads(self):
         # Fetch unscored leads
         leads = self.sf.query("""
-            SELECT Id, Company, Title, Industry, 
+            SELECT Id, Company, Title, Industry,
                    NumberOfEmployees, AnnualRevenue
-            FROM Lead 
+            FROM Lead
             WHERE LeadScore__c = NULL
             LIMIT 100
         """)
-        
+
         for lead in leads:
             # Enrich with external data
             enriched_data = self.enrich_lead(lead)
-            
+
             # Calculate AI score
             score = self.model.predict(enriched_data)
-            
+
             # Update Salesforce
             self.sf.update('Lead', lead['Id'], {
                 'LeadScore__c': score,
@@ -131,21 +127,21 @@ const automateDataEntry = async (email: Email) => {
   // Extract key information using AI
   const extracted = await ai.extract({
     text: email.body,
-    fields: ['company', 'contact_name', 'phone', 'requirements']
+    fields: ['company', 'contact_name', 'phone', 'requirements'],
   });
-  
+
   // Create or update Salesforce records
   if (extracted.company) {
     const account = await sf.findOrCreate('Account', {
-      Name: extracted.company
+      Name: extracted.company,
     });
-    
+
     const contact = await sf.create('Contact', {
       AccountId: account.Id,
       LastName: extracted.contact_name,
-      Phone: extracted.phone
+      Phone: extracted.phone,
     });
-    
+
     // Create opportunity if requirements detected
     if (extracted.requirements) {
       await sf.create('Opportunity', {
@@ -153,7 +149,7 @@ const automateDataEntry = async (email: Email) => {
         Name: `${extracted.company} - Auto Created`,
         StageName: 'Qualification',
         CloseDate: addDays(new Date(), 90),
-        Description: extracted.requirements
+        Description: extracted.requirements,
       });
     }
   }
@@ -166,23 +162,23 @@ Configure AI-powered alerts for important events:
 
 ```yaml
 alert_rules:
-  - name: "High-Value Lead Engagement"
+  - name: 'High-Value Lead Engagement'
     trigger:
       - lead_score > 80
       - email_opened > 3
       - website_visit_duration > 300
     action:
       - notify: account_executive
-      - create_task: "Follow up within 2 hours"
-      
-  - name: "Churn Risk Detection"
+      - create_task: 'Follow up within 2 hours'
+
+  - name: 'Churn Risk Detection'
     trigger:
       - sentiment_score < 0.3
       - support_tickets > 2
       - last_purchase > 60_days
     action:
       - notify: customer_success
-      - create_case: "Proactive outreach required"
+      - create_case: 'Proactive outreach required'
 ```
 
 ## Step 6: Measure and Optimize
@@ -194,22 +190,22 @@ const metrics = {
   automation: {
     leadsProcessed: 1250,
     timesSaved: 47, // hours per week
-    accuracyImprovement: 38 // percentage
+    accuracyImprovement: 38, // percentage
   },
   business: {
     leadConversionRate: {
       before: 0.12,
-      after: 0.19
+      after: 0.19,
     },
     averageDealSize: {
       before: 45000,
-      after: 52000
+      after: 52000,
     },
     salesCycledays: {
       before: 92,
-      after: 78
-    }
-  }
+      after: 78,
+    },
+  },
 };
 ```
 
@@ -251,4 +247,4 @@ Ready to implement AI automation in your Salesforce instance? [Contact us](https
 
 ---
 
-*This guide is based on real implementations across 50+ Salesforce instances. Results may vary based on your specific use case and data quality.*
+_This guide is based on real implementations across 50+ Salesforce instances. Results may vary based on your specific use case and data quality._

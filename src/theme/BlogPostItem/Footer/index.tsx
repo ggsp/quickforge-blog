@@ -11,13 +11,7 @@ import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink';
 
 export default function BlogPostItemFooter(): ReactNode {
   const { metadata, isBlogPostPage } = useBlogPost();
-  const {
-    title,
-    editUrl,
-    hasTruncateMarker,
-    lastUpdatedBy,
-    lastUpdatedAt,
-  } = metadata;
+  const { title, editUrl, hasTruncateMarker, lastUpdatedBy, lastUpdatedAt } = metadata;
 
   // For list view, don't render any footer content
   if (!isBlogPostPage) {
@@ -34,10 +28,7 @@ export default function BlogPostItemFooter(): ReactNode {
   return (
     <footer className="docusaurus-mt-lg">
       <EditMetaRow
-        className={clsx(
-          'margin-top--sm',
-          ThemeClassNames.blog.blogFooterEditMetaRow,
-        )}
+        className={clsx('margin-top--sm', ThemeClassNames.blog.blogFooterEditMetaRow)}
         editUrl={editUrl}
         lastUpdatedAt={lastUpdatedAt}
         lastUpdatedBy={lastUpdatedBy}

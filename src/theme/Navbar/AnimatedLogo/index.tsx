@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import type { JSX } from 'react';
 import { motion } from 'framer-motion';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +12,7 @@ export default function AnimatedLogo(): JSX.Element {
 
   useEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
-    
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -29,7 +30,7 @@ export default function AnimatedLogo(): JSX.Element {
 
   return (
     <Link to={logoLink} className="navbar__brand" style={{ textDecoration: 'none' }}>
-      <motion.div 
+      <motion.div
         className="quickforge-logo"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -105,14 +106,14 @@ export default function AnimatedLogo(): JSX.Element {
             x: {
               delay: 0,
               duration: isScrolled ? 0.15 : 0.2,
-              ease: [0.6, 0.0, 0.4, 1]
+              ease: [0.6, 0.0, 0.4, 1],
             },
             // Opacity changes have proper entrance delay
             opacity: {
               delay: hasLoaded ? 0 : 1.1, // Appear after "Quickforge" completes
               duration: 0.3,
-              ease: [0.6, 0.0, 0.4, 1]
-            }
+              ease: [0.6, 0.0, 0.4, 1],
+            },
           }}
         >
           /
@@ -139,10 +140,10 @@ export default function AnimatedLogo(): JSX.Element {
               }}
               transition={{
                 // Position changes (x) should be immediate when scrolling
-                x: { 
-                  delay: 0, 
+                x: {
+                  delay: 0,
                   duration: isScrolled ? 0.15 : 0.2,
-                  ease: [0.6, 0.0, 0.4, 1]
+                  ease: [0.6, 0.0, 0.4, 1],
                 },
                 // Opacity changes should have proper delays
                 opacity: {
@@ -151,12 +152,12 @@ export default function AnimatedLogo(): JSX.Element {
                     : hasLoaded
                       ? isB
                         ? 1.3 // B appears after separator
-                        : 0.5 + (index * 0.05) // "log" letters appear with same stagger as first load
+                        : 0.5 + index * 0.05 // "log" letters appear with same stagger as first load
                       : isB
                         ? 1.3
-                        : 1.35 + (index * 0.03),
+                        : 1.35 + index * 0.03,
                   duration: 0.2,
-                  ease: [0.6, 0.0, 0.4, 1]
+                  ease: [0.6, 0.0, 0.4, 1],
                 },
                 // Scale follows opacity timing
                 scale: {
@@ -165,13 +166,13 @@ export default function AnimatedLogo(): JSX.Element {
                     : hasLoaded
                       ? isB
                         ? 1.3
-                        : 0.5 + (index * 0.05) // "log" letters appear with same stagger as first load
+                        : 0.5 + index * 0.05 // "log" letters appear with same stagger as first load
                       : isB
                         ? 1.3
-                        : 1.35 + (index * 0.05),
+                        : 1.35 + index * 0.05,
                   duration: 0.2,
-                  ease: [0.6, 0.0, 0.4, 1]
-                }
+                  ease: [0.6, 0.0, 0.4, 1],
+                },
               }}
             >
               {letter}

@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import UnifiedSidebar from '@theme/UnifiedSidebar';
+import UnifiedSidebar from '../UnifiedSidebar';
 
 import type { Props } from '@theme/BlogLayout';
 
@@ -18,9 +18,9 @@ export default function BlogLayout(props: Props): ReactNode {
               'col--9': hasSidebar,
               'col--12': !hasSidebar,
             })}
-            style={{ 
+            style={{
               paddingRight: hasSidebar ? '3rem' : undefined,
-              marginLeft: 0
+              marginLeft: 0,
             }}
           >
             {children}
@@ -33,7 +33,7 @@ export default function BlogLayout(props: Props): ReactNode {
                 right: 'max(0px, calc((100vw - 80rem) / 2))',
                 width: 'calc((80rem * 0.25) - 1rem)',
                 height: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
-                zIndex: 10
+                zIndex: 10,
               }}
             >
               <UnifiedSidebar sidebar={sidebar} />

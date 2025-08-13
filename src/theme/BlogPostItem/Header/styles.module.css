@@ -91,21 +91,21 @@
   .authorsList {
     gap: 0.5rem;
   }
-  
+
   .authorBadge {
     font-size: 0.9rem;
     padding: 0.2rem 0;
   }
-  
+
   .authorBadge :global(.avatar__photo) {
     width: 2.25rem;
     height: 2.25rem;
   }
-  
+
   .authorBadge :global(.avatar__name) {
     font-size: 1rem;
   }
-  
+
   .authorBadge :global(.avatar__subtitle) {
     font-size: 0.9rem;
   }

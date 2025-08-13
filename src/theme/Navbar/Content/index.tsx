@@ -1,4 +1,5 @@
 import React from 'react';
+import type { JSX } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { splitNavbarItems, useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import NavbarItem from '@theme/NavbarItem';
@@ -16,7 +17,7 @@ function useNavbarItems() {
     ...useThemeConfig().navbar.items,
     {
       type: 'custom-main-site-button',
-      position: 'right',
+      position: 'right' as const,
     },
   ];
 }

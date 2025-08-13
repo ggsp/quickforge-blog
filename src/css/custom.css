@@ -433,7 +433,6 @@ pre {
   line-height: 1.15;
 }
 
-
 .markdown h2 {
   font-size: 2rem;
   margin-top: 2.5rem;
@@ -690,7 +689,7 @@ article h2 a {
 }
 
 /* Individual Blog Post Page Titles - using same variables */
-article header h1[class*="title_"] {
+article header h1[class*='title_'] {
   font-size: var(--blog-title-size);
   font-weight: var(--blog-title-weight);
   letter-spacing: var(--blog-title-spacing);
@@ -701,16 +700,16 @@ article header h1[class*="title_"] {
 /* Fixed Sidebar Enhancements */
 
 /* Add subtle shadow to fixed sidebar for depth */
-aside[style*="position: fixed"] {
+aside[style*='position: fixed'] {
   /* Subtle shadow for elevation effect */
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
-  
+
   /* Ensure sidebar content doesn't touch edges */
   padding: 0 1rem;
 }
 
 /* Smooth transitions when sidebar appears/disappears */
-aside[style*="position: fixed"] .unifiedSidebar {
+aside[style*='position: fixed'] .unifiedSidebar {
   animation: slideIn 0.3s ease-out;
 }
 
@@ -733,7 +732,7 @@ main.col--9 {
 
 /* Handle edge case for very wide screens */
 @media (min-width: 1920px) {
-  aside[style*="position: fixed"] {
+  aside[style*='position: fixed'] {
     right: calc((100vw - 80rem) / 2) !important;
   }
 }
@@ -744,4 +743,3 @@ main.col--9 {
     max-width: 80rem;
   }
 }
-

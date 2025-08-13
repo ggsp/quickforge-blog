@@ -9,12 +9,9 @@ import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
 import MDXContent from '@theme/MDXContent';
 import type { Props } from '@theme/BlogPostItem/Content';
 
-export default function BlogPostItemContent({
-  children,
-  className,
-}: Props): ReactNode {
+export default function BlogPostItemContent({ children, className }: Props): ReactNode {
   const { isBlogPostPage, metadata } = useBlogPost();
-  
+
   // In list view, show description instead of full content
   if (!isBlogPostPage) {
     return (
@@ -25,12 +22,10 @@ export default function BlogPostItemContent({
       </div>
     );
   }
-  
+
   // In post page, show full content
   return (
-    <div
-      id={blogPostContainerID}
-      className={clsx('markdown', className)}>
+    <div id={blogPostContainerID} className={clsx('markdown', className)}>
       <MDXContent>{children}</MDXContent>
     </div>
   );

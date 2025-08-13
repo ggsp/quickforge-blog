@@ -7,7 +7,7 @@ import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
-import UnifiedSidebar from '@theme/UnifiedSidebar';
+import UnifiedSidebar from '../UnifiedSidebar';
 import ContentVisibility from '@theme/ContentVisibility';
 import type { Props } from '@theme/BlogPostPage';
 import type { BlogSidebar } from '@docusaurus/plugin-content-blog';
@@ -33,14 +33,14 @@ function BlogPostPageContent({
     <Layout>
       <div className="container margin-vert--lg">
         <div className="row">
-          <main 
+          <main
             className={clsx('col', {
               'col--9': hasSidebar,
               'col--12': !hasSidebar,
-            })} 
-            style={{ 
-              paddingRight: hasSidebar ? '3rem' : undefined, 
-              marginLeft: 0 
+            })}
+            style={{
+              paddingRight: hasSidebar ? '3rem' : undefined,
+              marginLeft: 0,
             }}
           >
             <ContentVisibility metadata={metadata} />
@@ -57,7 +57,7 @@ function BlogPostPageContent({
                 right: 'max(0px, calc((100vw - 80rem) / 2))',
                 width: 'calc((80rem * 0.25) - 1rem)',
                 height: 'calc(100vh - var(--ifm-navbar-height) - 4rem)',
-                zIndex: 10
+                zIndex: 10,
               }}
             >
               {!hideTableOfContents && (

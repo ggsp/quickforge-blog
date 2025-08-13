@@ -14,7 +14,7 @@ import styles from './styles.module.css';
 export default function BlogPostItemHeader(): ReactNode {
   const { metadata, assets, isBlogPostPage } = useBlogPost();
   const { authors, tags } = metadata;
-  
+
   // Only show authors and tags on individual blog post pages, not on the list
   const showAuthorsAndTags = isBlogPostPage;
   const authorsCount = authors.length;
@@ -24,7 +24,7 @@ export default function BlogPostItemHeader(): ReactNode {
     <header>
       <BlogPostItemHeaderTitle />
       <BlogPostItemHeaderInfo />
-      
+
       {showAuthorsAndTags && (
         <div className={styles.headerMeta}>
           {/* Author badges */}
@@ -44,7 +44,7 @@ export default function BlogPostItemHeader(): ReactNode {
               </div>
             </div>
           )}
-          
+
           {/* Tags */}
           {tagsExist && (
             <div className={styles.tagsSection}>

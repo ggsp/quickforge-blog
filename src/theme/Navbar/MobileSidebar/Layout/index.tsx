@@ -1,4 +1,5 @@
 import React from 'react';
+import type { JSX } from 'react';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import NavbarMobileSidebarHeader from '@theme/Navbar/MobileSidebar/Header';
