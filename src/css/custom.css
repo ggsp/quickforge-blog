@@ -654,8 +654,8 @@ article h2 a:hover {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Blog post description/excerpt styling */
-article .markdown p:first-of-type {
+/* Blog list description styling */
+.blog-list-description {
   color: rgba(255, 255, 255, 0.55);
   font-size: 1.125rem;
   line-height: 1.7;
