@@ -65,7 +65,7 @@ For analytics, set in Vercel dashboard:
 
 - **Framework**: Docusaurus 3
 - **Language**: TypeScript
-- **Styling**: Custom CSS with Aeonik fonts
+- **Styling**: Custom CSS with Inter fonts
 - **Deployment**: Vercel
 - **Analytics**: PostHog (optional)
 

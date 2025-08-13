@@ -5,72 +5,24 @@
 
 /* Font Face Definitions */
 @font-face {
-  font-family: 'Aeonik';
-  src: url('/fonts/aeonik/Aeonik-Regular.woff2') format('woff2');
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Aeonik';
-  src: url('/fonts/aeonik/Aeonik-Medium.woff2') format('woff2');
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Aeonik';
-  src: url('/fonts/aeonik/Aeonik-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Fono';
-  src: url('/fonts/aeonik-fono/AeonikFono-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Fono';
-  src: url('/fonts/aeonik-fono/AeonikFono-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Fono';
-  src: url('/fonts/aeonik-fono/AeonikFono-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Mono';
-  src: url('/fonts/aeonik-mono/AeonikMono-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Mono';
-  src: url('/fonts/aeonik-mono/AeonikMono-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Mono';
-  src: url('/fonts/aeonik-mono/AeonikMono-Bold.woff2') format('woff2');
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -92,9 +44,9 @@
   --ifm-background-surface-color: #1a0d1f;
 
   /* Typography */
-  --ifm-font-family-base: 'Aeonik', system-ui, sans-serif;
-  --ifm-heading-font-family: 'Aeonik', system-ui, sans-serif;
-  --ifm-font-family-monospace: 'Aeonik Mono', 'SF Mono', monospace;
+  --ifm-font-family-base: 'Inter', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Inter', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Consolas', 'Courier New', monospace;
   --ifm-code-font-size: 95%;
 
   /* Code Highlighting */
@@ -255,23 +207,23 @@ pre {
 }
 
 .quickforge-logo__q {
-  font-family: 'Aeonik', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 500;
 }
 
 .quickforge-logo__text {
-  font-family: 'Aeonik Fono', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 500;
 }
 
 /* Individual letter styling for animations */
 .quickforge-logo__text-letter {
-  font-family: 'Aeonik Fono', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 500;
 }
 
 .quickforge-logo__separator {
-  font-family: 'Aeonik', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 300;
   margin: 0 0.5rem;
   opacity: 0.4;
@@ -279,7 +231,7 @@ pre {
 }
 
 .quickforge-logo__blog {
-  font-family: 'Aeonik', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.6);
@@ -287,7 +239,7 @@ pre {
 
 /* Individual blog letter styling for animations */
 .quickforge-logo__blog-letter {
-  font-family: 'Aeonik', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.6);
@@ -533,7 +485,7 @@ table tbody tr:hover {
 /* Mobile menu items styling */
 .navbar-sidebar .menu__link {
   color: rgba(255, 255, 255, 0.9);
-  font-family: 'Aeonik', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 500;
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
