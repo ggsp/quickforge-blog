@@ -65,11 +65,11 @@ export default function AnimatedLogo(): JSX.Element {
               className="quickforge-logo__text-letter"
               initial={{
                 opacity: isF ? 1 : 0, // 'f' starts visible, others hidden
-                x: isF ? -62 : 0, // 'f' starts in condensed position (restore original)
+                x: isF ? -55 : 0, // 'f' starts in condensed position (restore original)
               }}
               animate={{
                 opacity: shouldShow ? 1 : 0,
-                x: isScrolled && isF ? -62 : 0, // Move 'f' to condensed position when scrolled, back to normal when not
+                x: isScrolled && isF ? -55 : 0, // Move 'f' to condensed position when scrolled, back to normal when not
                 scale: shouldShow ? 1 : 0.8,
               }}
               transition={{
@@ -98,7 +98,7 @@ export default function AnimatedLogo(): JSX.Element {
           initial={{ opacity: 0, x: 10 }}
           animate={{
             opacity: isScrolled ? 0.4 : 0.4, // Keep visible when scrolled
-            x: isScrolled ? -130 : 0, // Move closer to Qf when scrolled
+            x: isScrolled ? -123 : 0, // Move closer to Qf when scrolled
             scale: 1,
           }}
           transition={{
