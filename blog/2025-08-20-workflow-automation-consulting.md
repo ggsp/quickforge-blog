@@ -4,7 +4,7 @@ title: Workflow Automation Consulting: How Small Businesses and Banks Can Scale 
 authors: [quickforge]
 tags: [workflow-automation-consulting,business-process-automation,automation-agency,automation-consulting-services,business-automation-consultant]
 description: A deep dive into workflow automation consulting, what services look like in practice, and how the best firms help businesses — from small startups to banks — scale smarter.
-keywords:[Workflow automation consulting, business process automation consultant, business automation consultant, business optimization consulting]
+keywords: [Workflow automation consulting, business process automation consultant, business automation consultant, business optimization consulting]
 ---
 
 # Workflow Automation Consulting: How Small Businesses and Banks Can Scale Smarter
