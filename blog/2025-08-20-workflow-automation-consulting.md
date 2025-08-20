@@ -13,7 +13,7 @@ When you hear “automation,” most people think of robots replacing factory jo
 **Workflow automation consulting** is about freeing yourself from repetitive, manual work and letting them focus on what actually grows the business.  
 
 Whether you’re a **small business automation consultant** setting up Zapier workflows, or a global firm implementing RPA for **banks**, the playbook is the same:  
-map the process → eliminate waste → design automations → scale.  
+map the process → eliminate waste → design automations then scale.  
 
 This guide will cover:
 
