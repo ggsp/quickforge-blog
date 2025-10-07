@@ -1,7 +1,7 @@
 ---
 slug: welcome-to-quickforge-blog
 title: Welcome to the Quickforge Blog - AI Automation That Actually Works
-authors: [greg, alex]
+authors: [quickforge team]
 tags: [ai-automation, best-practices]
 image: /img/blog/welcome-quickforge.png
 description: Learn how Quickforge helps established businesses implement practical AI automation solutions that connect to existing tools and deliver real ROI.
