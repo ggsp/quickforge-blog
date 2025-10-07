@@ -1,5 +1,3 @@
-Also see the blog has jan dates? 
-
 ---
 slug: what-is-a-marketing-automation-consultant
 title: What is a Marketing Automation Consultant
