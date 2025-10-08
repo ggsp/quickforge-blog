@@ -9,7 +9,8 @@ keywords: [marketing-automation-consultant,marketing-automation-consulting,marke
 # Marketing Automation Consultant: How Consulting & Implementation Services Drive Growth
 
 “Do more with less” has become the default marketing mantra.  
-But if you’re still copying leads into spreadsheets, manually sending follow-up emails, or juggling campaign reports from five platforms, you’re not doing more with less — you’re just doing more.  
+But if you’re still copying leads into spreadsheets, manually sending follow-up emails, 
+or juggling campaign reports from five platforms, you’re not doing more with less — you’re just doing more.  
 
 That’s where a **marketing automation consultant** comes in.  
 
