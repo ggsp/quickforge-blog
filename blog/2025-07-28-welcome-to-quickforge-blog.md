@@ -81,8 +81,6 @@ Ready to explore AI automation for your business? Here are your next steps:
 ## Stay Connected
 
 - Follow us on [LinkedIn](https://linkedin.com/company/quickforge) for daily tips
-- Join our [community forum](https://community.quickforge.ai) to connect with other automation leaders
-- Subscribe to our [YouTube channel](https://youtube.com/@quickforge) for video tutorials
 
 Welcome to the future of business automation – practical, proven, and profitable.
 
