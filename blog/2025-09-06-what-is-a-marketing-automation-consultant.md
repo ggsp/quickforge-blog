@@ -2,7 +2,7 @@
 slug: what-is-a-marketing-automation-consultant
 title: What is a Marketing Automation Consultant
 authors: [quickforge]
-tags: [marketing-automation-consultant,marketing-automation-consulting,marketing-automation-implementation,automation-agency,business-automation]
+keywords: [marketing-automation-consultant,marketing-automation-consulting,marketing-automation-implementation,automation-agency,business-automation]
 description: A guide to marketing automation consulting, what a marketing automation consultant does, real-world examples, and how implementation services save businesses hours every week.
 ---
 
